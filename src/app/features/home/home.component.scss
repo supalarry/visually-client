@@ -1,0 +1,39 @@
+section {
+  @apply h-screen;
+  @apply p-8;
+  @apply flex;
+  @apply flex-col;
+  @apply justify-around;
+  @apply items-center;
+  @apply text-center;
+  @apply text-gray-800;
+
+  #heading {
+    h1 {
+      @apply text-4xl;
+      @apply font-semibold;
+      @apply mb-1;
+    }
+
+    p {
+      @apply mt-8;
+      @apply text-xl;
+      @apply max-w-md;
+    }
+  }
+}
+
+@screen md {
+  section {
+    #heading {
+      h1 {
+        @apply text-7xl;
+      }
+    }
+  }
+}
+
+.stroke {
+  @apply text-white;
+  text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+}
