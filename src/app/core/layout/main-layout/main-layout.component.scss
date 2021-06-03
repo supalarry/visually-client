@@ -4,4 +4,7 @@
 
 button {
   margin: 0 10px;
+  &.active {
+    @apply text-green-500;
+  }
 }
