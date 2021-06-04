@@ -1,0 +1,58 @@
+/*
+
+C O N T A I N E R Stuff
+
+*/
+
+@mixin flexContainer(
+  $direction,
+  $mainAxisAllignement: 0,
+  $crossAxisAllignement: 0
+) {
+  display: flex;
+  // apply direction
+  flex-direction: $direction;
+  // main axis allignement
+  @if $mainAxisAllignement != 0 {
+    justify-content: $mainAxisAllignement;
+  }
+  // cross axis allignement
+  @if $crossAxisAllignement != 0 {
+    align-items: $crossAxisAllignement;
+  }
+}
+
+/*
+
+F O N T Stuff
+
+*/
+
+@mixin gradientText(
+  $fromColor,
+  $fromColorStopPercent,
+  $toColor,
+  $toColorStopPercent,
+  $angle
+) {
+  // backgorund-color is fallback if browser doesn't support background-image
+  background-color: $fromColor;
+  background-image: linear-gradient(
+    $angle,
+    $fromColor $fromColorStopPercent,
+    $toColor $toColorStopPercent
+  );
+  background-size: 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+@mixin strokeText($innerColor, $strokeColor, $strokeWidthPx) {
+  color: $innerColor;
+  text-shadow: 0 0 $strokeWidthPx + px $strokeColor,
+    0 0 $strokeWidthPx + px $strokeColor, 0 0 $strokeWidthPx + px $strokeColor,
+    0 0 $strokeWidthPx + px $strokeColor;
+}
