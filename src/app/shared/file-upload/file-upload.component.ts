@@ -14,7 +14,7 @@ export class FileUploadComponent {
   @Input() fileType: string;
   @Output() onFileUploaded = new EventEmitter<FileUpload>();
   fileName = '';
-  uploadProgress: number | null;
+  uploading = false;
   uploadSub: Subscription | null;
 
   constructor(private http: HttpClient) {}
@@ -34,21 +34,28 @@ export class FileUploadComponent {
         })
         .pipe(finalize(() => this.reset()));
 
-      this.uploadSub = upload$.subscribe((event) => {
+      this.uploadSub = upload$.subscribe((event: any) => {
         if (event.type == HttpEventType.UploadProgress && event.total) {
-          this.uploadProgress = Math.round(100 * (event.loaded / event.total));
+          this.uploading = true;
+          this.onFileUploaded.emit({
+            name: this.fileName,
+            status: 'progress',
+            url: '',
+          });
+        } else if (event.type == HttpEventType.Response) {
+          this.onFileUploaded.emit({
+            name: this.fileName,
+            status: 'finished',
+            url: event.body?.url,
+          });
         }
       });
     }
   }
 
-  cancelUpload() {
-    this.uploadSub?.unsubscribe();
-    this.reset();
-  }
-
   reset() {
-    this.uploadProgress = null;
+    this.fileName = '';
+    this.uploading = false;
     this.uploadSub = null;
   }
 }

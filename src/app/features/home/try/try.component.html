@@ -1,5 +1,21 @@
 <section class="try container">
   <h1 class="heading">Try Visually</h1>
-  <p class="description">Upload your podcast and surprise your fans.</p>
-  <app-file-upload class="file-upload"></app-file-upload>
+  <div *ngIf="!progress && !finished">
+    <p class="description">Upload your podcast and surprise your fans.</p>
+  </div>
+  <div *ngIf="progress && !finished">
+    <p class="description">Generating visuals...</p>
+  </div>
+  <div *ngIf="finished">
+    <p class="description">Your movie is ready!</p>
+    <button class="button button-white-outline">
+      <a target="_blank" rel="noopener noreferrer" [href]="url">Download</a>
+    </button>
+  </div>
+  <app-file-upload
+    *ngIf="!finished"
+    class="file-upload"
+    (onFileUploaded)="onFileUploaded($event)"
+  >
+  </app-file-upload>
 </section>

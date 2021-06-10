@@ -16,3 +16,8 @@
   @apply block;
   @apply mt-4;
 }
+
+.button {
+  @extend .button;
+  @apply mt-4;
+}
