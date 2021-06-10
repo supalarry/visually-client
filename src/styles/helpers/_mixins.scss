@@ -1,6 +1,6 @@
 /*
 
-C O N T A I N E R Stuff
+Container Stuff
 
 */
 
@@ -24,7 +24,7 @@ C O N T A I N E R Stuff
 
 /*
 
-F O N T Stuff
+Font Stuff
 
 */
 
@@ -55,4 +55,26 @@ F O N T Stuff
   text-shadow: 0 0 $strokeWidthPx + px $strokeColor,
     0 0 $strokeWidthPx + px $strokeColor, 0 0 $strokeWidthPx + px $strokeColor,
     0 0 $strokeWidthPx + px $strokeColor;
+}
+
+/*
+
+Background Stuff
+
+*/
+
+@mixin gradientBackground(
+  $fromColor,
+  $fromColorStopPercent,
+  $toColor,
+  $toColorStopPercent,
+  $angle
+) {
+  // backgorund-color is fallback if browser doesn't support background-image
+  background-color: $fromColor;
+  background-image: linear-gradient(
+    $angle,
+    $fromColor $fromColorStopPercent,
+    $toColor $toColorStopPercent
+  );
 }

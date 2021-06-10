@@ -2,9 +2,16 @@
 @import '../../../../styles/helpers/colors';
 @import '../../../../styles/base/typography';
 
-.hero {
-  @include flexContainer(column, center, center);
-  @apply h-screen;
-  @apply p-8;
+.try {
   @apply text-center;
+  @apply py-32;
+  @apply mb-8;
+  @apply rounded-lg;
+  background-color: #6e72fc;
+  color: $light;
+}
+
+.file-upload {
+  @apply block;
+  @apply mt-4;
 }

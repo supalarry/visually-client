@@ -29,7 +29,12 @@ $visually-client-theme: mat-light-theme(
   )
 );
 
+// $visually-typography: mat-typography-config(
+//   $font-family: 'GTWalsheimPro-Regular',
+// );
+
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($visually-client-theme);
+// @include mat-core($visually-typography);

@@ -1,0 +1,3 @@
+interface FileUpload {}
+
+export { FileUpload };

@@ -1,0 +1,30 @@
+<input
+  type="file"
+  class="file-input"
+  [accept]="fileType"
+  (change)="onFileSelected($event)"
+  #fileUpload
+/>
+
+<div class="file-upload">
+  <button class="button button-white-outline" (click)="fileUpload.click()">
+    <h1 class="upload-button-text">Upload</h1>
+  </button>
+</div>
+
+<div class="progress">
+  <mat-progress-bar
+    class="progress-bar"
+    mode="determinate"
+    [value]="uploadProgress"
+    *ngIf="uploadProgress"
+  >
+  </mat-progress-bar>
+
+  <mat-icon
+    class="cancel-upload"
+    (click)="cancelUpload()"
+    *ngIf="uploadProgress"
+    >delete_forever</mat-icon
+  >
+</div>

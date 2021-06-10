@@ -1,0 +1,8 @@
+@import '../../../styles/helpers/mixins';
+@import '../../../styles/helpers/colors';
+@import '../../../styles/base/typography';
+@import '../../../styles/components/buttons';
+
+.file-input {
+  @apply hidden;
+}

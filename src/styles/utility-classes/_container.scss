@@ -1,0 +1,8 @@
+@import '../base/breakpoints';
+
+.main-container {
+  @apply px-4;
+  @include screen-lg {
+    @apply px-8;
+  }
+}
