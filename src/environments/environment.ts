@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  visuallyApiVideosRender: 'localhost:1337/api/videos/render',
+  visuallyApiVideosRender: 'http://localhost:1337/api/videos/render',
 };
 
 /*
