@@ -9,13 +9,17 @@
   color: $light;
 }
 
+.blue {
+  color: $blue;
+}
+
 .description {
   @apply text-xl;
   @apply tracking-wide;
   @apply font-light;
-  @apply mt-4;
   @apply max-w-lg;
   @apply mx-auto;
+  @apply text-gray-700;
   font-family: 'GT-America', Arial, sans-serif;
 }
 
@@ -35,6 +39,11 @@
 
 .heading {
   @apply text-5xl;
+  font-family: 'GT-Walsheim-Bold', Arial, sans-serif;
+}
+
+.headingSmall {
+  @apply text-3xl;
   font-family: 'GT-Walsheim-Bold', Arial, sans-serif;
 }
 

@@ -1,4 +1,45 @@
+@import '../../../../styles/helpers/mixins';
+@import '../../../../styles/helpers/colors';
+@import '../../../../styles/base/typography';
+
 .explanation {
   @apply text-center;
-  height: 100vh;
+  @apply min-h-screen;
+  @apply mb-32;
+}
+
+.explanation p:nth-child(1) {
+  color: $blue;
+  @apply bg-purple-100;
+  @apply px-4;
+  @apply py-2;
+  @apply rounded-lg;
+  @apply inline-block;
+}
+
+.explanation h1 {
+  @apply mt-8;
+  @apply mb-3;
+}
+
+.showcase {
+  @apply relative;
+  @apply my-8;
+}
+
+.soundwave {
+  @apply w-full;
+  @apply mx-auto;
+  @apply max-w-3xl;
+}
+
+.montage {
+  @apply absolute;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  @apply h-1/2;
+  @apply rounded-lg;
 }
