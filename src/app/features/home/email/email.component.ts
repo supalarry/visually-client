@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FileUpload } from '../../../shared/models/file-upload.model';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-email',
@@ -7,20 +8,18 @@ import { FileUpload } from '../../../shared/models/file-upload.model';
   styleUrls: ['./email.component.scss'],
 })
 export class EmailComponent implements OnInit {
-  progress = false;
-  finished = false;
-  url = '';
-  constructor() {}
+  signupForm: FormGroup;
+  submitted = false;
+  constructor() {
+    this.signupForm = new FormGroup({
+      email: new FormControl(null, [Validators.required, Validators.email]),
+    });
+  }
 
   ngOnInit(): void {}
 
-  onFileUploaded(file: FileUpload) {
-    if (file.status === 'progress') {
-      this.progress = true;
-    } else if (file.status === 'finished') {
-      this.url = file.url;
-      this.finished = true;
-      this.progress = false;
-    }
+  onSubmit() {
+    this.submitted = true;
+    console.log(this.signupForm.get('email')?.value);
   }
 }

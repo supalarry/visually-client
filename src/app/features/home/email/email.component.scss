@@ -13,6 +13,11 @@
   color: $light;
 }
 
+.invalid {
+  @apply opacity-25;
+  @apply cursor-default;
+}
+
 .signup {
   @apply flex;
   @apply flex-col;

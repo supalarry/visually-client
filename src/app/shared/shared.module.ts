@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FileUploadComponent } from '../shared/file-upload/file-upload.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [FileUploadComponent],
@@ -15,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     RouterModule,
     HttpClientModule,
+    ReactiveFormsModule,
     // material
     MatToolbarModule,
     MatButtonModule,
@@ -26,6 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     RouterModule,
     HttpClientModule,
+    ReactiveFormsModule,
     // material
     MatToolbarModule,
     MatButtonModule,

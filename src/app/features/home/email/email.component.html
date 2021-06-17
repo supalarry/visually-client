@@ -1,10 +1,24 @@
 <section class="container try">
-  <h1 class="heading">Get early access</h1>
-  <div>
-    <p class="description">Enter your email and receive invitation</p>
+  <div *ngIf="!submitted">
+    <h1 class="heading">Get early access 🎉</h1>
+    <div>
+      <p class="description">Enter your email and receive invitation</p>
+    </div>
+    <div>
+      <form class="signup" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        <input formControlName="email" type="email" placeholder="Your email" />
+        <button
+          type="submit"
+          [disabled]="!signupForm.valid"
+          [ngClass]="{ invalid: !signupForm.valid }"
+          class="button button-white-outline"
+        >
+          Get invitation
+        </button>
+      </form>
+    </div>
   </div>
-  <div class="signup">
-    <input type="email" placeholder="Your email" />
-    <button class="button button-white-outline">Get invitation</button>
+  <div *ngIf="submitted">
+    <p class="description">Awesome, you will hear from us soon!</p>
   </div>
 </section>
