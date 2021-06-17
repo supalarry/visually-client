@@ -1,0 +1,50 @@
+@import '../../../../styles/helpers/mixins';
+@import '../../../../styles/helpers/colors';
+@import '../../../../styles/base/typography';
+@import '../../../../styles/utility-classes/container';
+
+.try {
+  @apply text-center;
+  @apply py-16;
+  @apply mb-8;
+  @apply rounded-lg;
+  background-color: #ad1deb;
+  background-image: linear-gradient(315deg, #ad1deb 0%, #6e72fc 74%);
+  color: $light;
+}
+
+.signup {
+  @apply flex;
+  @apply flex-col;
+  @apply max-w-xs;
+  @apply mx-auto;
+}
+
+.signup input {
+  @apply px-4;
+  @apply py-2;
+  @apply rounded-md;
+  color: $dark;
+}
+
+.signup input:focus {
+  @apply outline-none;
+}
+
+.try h1 {
+  @apply mb-4;
+}
+
+p {
+  @apply my-8;
+}
+
+.button {
+  @extend .button;
+  @apply mt-4;
+}
+
+.description {
+  @extend .description;
+  color: $light;
+}
