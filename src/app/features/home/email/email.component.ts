@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FileUpload } from '../../../shared/models/file-upload.model';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { environment } from '../../../../environments/environment';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-email',
@@ -10,7 +11,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class EmailComponent implements OnInit {
   signupForm: FormGroup;
   submitted = false;
-  constructor() {
+  constructor(private http: HttpClient) {
     this.signupForm = new FormGroup({
       email: new FormControl(null, [Validators.required, Validators.email]),
     });
@@ -20,6 +21,11 @@ export class EmailComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-    console.log(this.signupForm.get('email')?.value);
+    const waitingListEndpoint = 'waitinglist';
+    this.http
+      .post(`${environment.visuallyApiUser}/${waitingListEndpoint}`, {
+        email: this.signupForm.get('email')?.value,
+      })
+      .subscribe((response) => console.log(response));
   }
 }

@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   visuallyApiVideosRender: 'http://localhost:1337/api/videos/render',
+  visuallyApiUser: 'http://localhost:1337/api/users',
 };
 
 /*
